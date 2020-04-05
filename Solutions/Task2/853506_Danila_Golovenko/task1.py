@@ -105,12 +105,12 @@ def sorting(path):
         full = tempfile.NamedTemporaryFile('w+')
         full, empty = empty, full 
 
-    with open(path) as bigFile:
+    with open(path) as bigFile: #Заполняем минимальную кучу, после чего мержим с файлом, в котором лежат прошлые отсортированняе числа
         for num in bigFile:
             if not minHeap.insert(int(num)): 
                 merge()
                 minHeap.insert(int(num)) 
-        merge()
+        merge()  
 
     with open("sorted.txt", 'w') as sortedBigFile:
         full.seek(0)

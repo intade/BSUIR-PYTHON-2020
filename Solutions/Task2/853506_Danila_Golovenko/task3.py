@@ -2,7 +2,7 @@ class Vector:
 
     def __init__(self, *elems):
         self.coordinates = list(elems)
-        self.it = 0
+        self.it = 0 #для функции __next__
 
     def __len__(self):
         return len(self.coordinates)
@@ -17,7 +17,7 @@ class Vector:
         self.it += 1
         if t >= len(self.coordinates):
             raise StopIteration
-        return t 
+        return self.coordinates[t] 
 
     def __getitem__(self, key):
         return self.coordinates[key]
@@ -27,7 +27,7 @@ class Vector:
         if(len(first) != len(second)):
             raise ValueError("невозможно сложить")
         temp = Vector()
-        for i in first:
+        for i in range(len(first)): 
             temp.coordinates.append(first[i] + second[i])
         return temp
 
@@ -36,7 +36,7 @@ class Vector:
         if(len(first) != len(second)):
             raise ValueError("невозможно вычесть")
         temp = Vector()
-        for i in first:
+        for i in range(len(first)):
             temp.coordinates.append(first[i] - second[i])
         return temp
 
@@ -44,7 +44,7 @@ class Vector:
     def mul(vector, c):
         temp = Vector() 
         for i in vector:
-           temp.coordinates.append(vector[i] * c)  
+           temp.coordinates.append(i * c)  
         return temp
 
     @staticmethod
@@ -52,7 +52,7 @@ class Vector:
         if(len(first) != len(second)):
             raise ValueError("невозможно перемножить")
         result = 0
-        for i in first:
+        for i in range(len(first)):
             result += first[i]*second[i]
         return result 
 
@@ -68,12 +68,12 @@ class Vector:
     def length(vector):
         result = 0
         for i in vector:
-            result += vector[i]**2
+            result += i**2
         return result**(1/2) 
 
     @staticmethod
     def toString(vector):
-        return "({0})".format(', '.join(str(num) for num in vector.coordinates))
+        return "({0})".format(', '.join(str(num) for num in vector))
 
     def getItemAt(self, index):
         return self.coordinates[index]

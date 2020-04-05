@@ -129,7 +129,7 @@ class MyJson:
             if (text[i] == ':' or text[i] == ' ') and not quot:
                 continue
             if ((text[i] == ',' or text[i] == ']' or text[i] == '}') and not quot):
-                def toIntOrFloat(s, f):
+                def to_int_or_float(s, f):
                     try:
                         if f:
                             return float(s)
@@ -138,7 +138,7 @@ class MyJson:
                         return None 
                 switcher = {'true' : True, 'false' : False, 'none' : None}
                 str = ''.join(tokens)
-                return (switcher.get(str, toIntOrFloat(str, isFloat)), i - 1)
+                return (switcher.get(str, to_int_or_float(str, isFloat)), i - 1)
             if (text[i] == "'" and quot):
                 return (''.join(tokens), i)
             if text[i] == "'":
