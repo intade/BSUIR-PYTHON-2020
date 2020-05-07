@@ -4,3 +4,6 @@
 [submodule "Solutions/Task3/time_to_drink_coffee"]
 	path = Solutions/Task3/time_to_drink_coffee
 	url = https://github.com/intade/time_to_drink_coffee
+[submodule "Solutions/Task3/--force"]
+	path = Solutions/Task3/--force
+	url = https://github.com/intade/time_to_drink_coffee
