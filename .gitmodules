@@ -1,0 +1,6 @@
+[submodule "Solutions/Task3/Solutions/Task3/proj"]
+	path = Solutions/Task3/Solutions/Task3/proj
+	url = https://github.com/intade/time_to_drink_coffee
+[submodule "Solutions/Task3/time_to_drink_coffee"]
+	path = Solutions/Task3/time_to_drink_coffee
+	url = https://github.com/intade/time_to_drink_coffee
